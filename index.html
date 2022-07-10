@@ -11,13 +11,21 @@
             color: white;
             font: 11pt Tahoma;
         }
+        tr:nth-child(even){
+            background-color: gray;
+        }
+        table, th, td {
+            border: 1px solid white;
+            border-collapse: collapse;
+            padding: 15px;
+        }
     </style>
 </head>
 <body>
     <h1>Simulador de Financiamento com Sistema de Amortização Constante (SAC)</h1>
     <input type="text" id="textoValor" placeholder="Valor do Bem">
     <input type="text" id="textoEntrada" placeholder="Valor da entrada">
-    <input type="text" id="textoTaxa" placeholder="Taxa de Juros (%)">
+    <input type="text" id="textoTaxaJuros" placeholder="Taxa de Juros (%)">
     <input type="text" id="textoPrazo" placeholder="Prazo (em meses)">
     <button id="botaoCalcular">Calcular</button>
     <input type="checkbox" id="comCarencia">Com carência?
@@ -26,6 +34,21 @@
         <option value="3"> 3 meses</option>
         <option value="4"> 4 meses</option>
     </select>
+    <p></p>
+    <table>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Valor da Parcela</th>
+                <th>Amortização</th>
+                <th>Juros</th>
+                <th>Juros</th>
+            </tr>
+        </thead>
+        <tbody id="corpoTabela">
+
+        </tbody>
+    </table>
     <script type="module" src="index.js"></script>
 </body>
 </html>
